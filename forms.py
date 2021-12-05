@@ -13,3 +13,12 @@ class LoginForm(FlaskForm):
     username = StringField("Username", validators=[InputRequired(message="Username must be filled")])
     password = PasswordField("Password", validators=[InputRequired(message="Password must be filled")])
 
+class FeedbackForm(FlaskForm):
+    title = StringField("Title", validators=[InputRequired(message="Title required"), Length(max=100, message="Title is longer than 100 characters")])
+    content = StringField("Content", validators=[InputRequired(message="Content required")])
+
+class DeleteForm(FlaskForm):
+    """Delete form -- this form is intentionally blank."""
+
+
+
